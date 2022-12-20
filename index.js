@@ -8,14 +8,8 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 app.all('/', (req, res) => {
-
-    console.log("Req data: " + req.data);
-
-    console.log("req headers: " + req.headers)
-
-    console.log("req payload:" + req.payload)
-
-    console.log("req body:" + req.body);
+    
+    console.log(req.body.signedPayload);
 
 
     /*
