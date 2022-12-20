@@ -15,6 +15,8 @@ app.all('/', (req, res) => {
 
     console.log("req payload:" + req.payload)
 
+    console.log("req body:" + req.body);
+
 
     /*
     const decode = jwt.decode(signedPayload);
