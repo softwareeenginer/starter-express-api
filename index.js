@@ -9,18 +9,17 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 app.all('/', (req, res) => {
     
-    console.log(req.body.signedPayload);
+    // -- SIGNED PAYLOAD -- //
+    const signedPayload = req.body.signedPayload;
 
-
-    /*
+    // -- DECODE -- //
     const decode = jwt.decode(signedPayload);
-    const decodeSignedTransactionInfo = jwt.decode(decode.data.signedTransactionInfo)
-    const decodesignedRenewalInfo = jwt.decode(decode.data.signedRenewalInfo)
-    console.log(decode)
-    console.log("\n\n")
-    console.log(decodeSignedTransactionInfo, decodesignedRenewalInfo)
-    */
-    res.send('IN APP PURCHASE IS LISTENING')
-})
+    const decodeSignedTransactionInfo = jwt.decode(decode.data.signedTransactionInfo);
+    const decodesignedRenewalInfo = jwt.decode(decode.data.signedRenewalInfo);
+    console.log(decode);
+    console.log("\n\n\n");
+    console.log(decodeSignedTransactionInfo, decodesignedRenewalInfo);
+    res.send('IN APP PURCHASE IS LISTENING');
+});
 app.listen(process.env.PORT || 3000);
 
