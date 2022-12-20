@@ -1,8 +1,11 @@
 const express = require('express')
-const app = express()
-var jose = require('node-jose');
-const aes256 = require('aes256');
+const app = express();
+
 const jwt = require("jsonwebtoken");
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 app.all('/', (req, res) => {
 
