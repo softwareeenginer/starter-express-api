@@ -1,11 +1,13 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
 
-// -------- LOGIN -------- //
-router.post("/register", async (req, res) => {
-    
-    console.log("veri")
+// -------- REG SUB -------- //
+router.post("/index", async (req, res) => {
+    console.log("veri");
+    res.json({
+        success:200,
+    })
 });
 
 
